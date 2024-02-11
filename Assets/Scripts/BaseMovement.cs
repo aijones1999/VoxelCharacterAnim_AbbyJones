@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 
 public class BaseMovement : MonoBehaviour
-
 {
+
     [SerializeField]
     private float moveSpeed;
     [SerializeField]
@@ -14,20 +14,19 @@ public class BaseMovement : MonoBehaviour
 
     [Header("References")]
     [SerializeField]
-    private Rigidbody myRigibody;
-
+    private Rigidbody myRigidbody;
 
     // Start is called before the first frame update
     void Awake()
     {
-        if (!myRigibody)
+        if (!myRigidbody)
         {
-            myRigibody = GetComponent<Rigidbody>();
+            myRigidbody = GetComponent<Rigidbody>();
         }
     }
 
     public void Move(Vector3 moveDirection)
     {
-        myRigibody.velocity = moveDirection.normalized * moveSpeed;
+        myRigidbody.velocity = moveDirection.normalized * moveSpeed;
     }
 }

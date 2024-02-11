@@ -23,7 +23,7 @@ public class PlayerMovement : BaseMovement
         tempMovement.y = 0f; // Ensure no vertical movement
     }
 
-   void FixedUpdate()
+    void FixedUpdate()
     {
         PlayerMove();
         ChangeAnimation();
@@ -38,14 +38,14 @@ public class PlayerMovement : BaseMovement
     {
         if (myAnim)
         {
-            if(tempMovement.magnitude > 0f)
+            if (tempMovement.magnitude > 0f)
             {
                 myAnim.ChangeAnimBoolValue("Running", true);
 
                 float rot = Mathf.Atan2(-tempMovement.z, tempMovement.x) * Mathf.Rad2Deg + 90f;
                 transform.rotation = Quaternion.Euler(0f, rot, 0f);
             }
-           else
+            else
             {
                 myAnim.ChangeAnimBoolValue("Running", false);
             }
